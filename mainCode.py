@@ -1,6 +1,5 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-
 csv_in_use = "historicalData.csv"
 date_column = "Date"
 y_axis = "Close/Last"
@@ -19,18 +18,21 @@ def read_nordic_data():
 nordic_df = read_nordic_data()
 
 
-def min_max_index():
-    """getting min max of index"""
+def min_max_index(csv_in_use, date_column):
+    """getting min max of index as Timestamps"""
     df = pd.read_csv(csv_in_use)
-    min_value = df[date_column].min()
-    max_value = df[date_column].max()
+    datetime_dates = pd.to_datetime(df[date_column])
+    converted_datetime_dates = datetime_dates
+    min_value = converted_datetime_dates.min()
+    max_value = converted_datetime_dates.max()
     
-    return min_value, max_value
+    return min_value.strftime("%Y-%m-%d"), max_value.strftime("%Y-%m-%d")
 
 #get min and max_value of data set
-min_value, max_value = min_max_index()
+min_value, max_value = min_max_index(csv_in_use, date_column)
 print(min_value)
 print(max_value)
+
 
 
 def plot_nordic_graph():
@@ -60,3 +62,4 @@ def plot_std_pct_graph():
     plt.show()
 
 plot_std_pct_graph()
+
