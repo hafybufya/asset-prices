@@ -6,6 +6,9 @@ import datetime
 # define the unit tests
 class my_unit_tests(unittest.TestCase):
 
+
+    def test_read_nordic_date(self):
+         pass
         # tests if the csv file has been saved
     def test_csv_file_exists(self):
         """Tests if csv exists"""
@@ -32,6 +35,8 @@ class my_unit_tests(unittest.TestCase):
 
             # deletes temp_csv
             os.remove(temp_csv)
+
+
     # run the tests
 if __name__ == "__main__":
     unittest.main()
