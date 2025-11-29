@@ -45,4 +45,4 @@ pip install pandas matplotlib os tempfile
 
 
 ## 📄 License
-This project is open source and available under the [MIT License](https://github.com/hafybufya/daily-price-change-sorting/blob/main/LICENSE).
+This project is open source and available under the [MIT License](https://github.com/hafybufya/asset-prices/blob/main/LICENSE).
